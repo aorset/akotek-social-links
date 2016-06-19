@@ -10,7 +10,6 @@ Author URI: https://akotek.no
 
 function asl_load_styles() {
   wp_enqueue_style( 'font-awesome-styles', plugins_url( 'font-awesome-4.6.3/css/font-awesome.min.css', __FILE__ ) );
-  // wo_enqueue_script( '', plugins_url('pd101-scripts.js', 'ASL_PLUGIN_PATH' ) );
 }
 add_action( 'wp_enqueue_scripts', 'asl_load_styles' );
 
@@ -22,5 +21,4 @@ function sl_add_social_links( $content ){
   }
   return $content;
 }
-
 add_filter('the_content', 'sl_add_social_links');
