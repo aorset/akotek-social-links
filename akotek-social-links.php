@@ -14,7 +14,10 @@ add_action( 'wp_enqueue_scripts', 'asl_load_styles' );
 
 function asl_add_social_links( $content ){
 
-  $social_content = null;
+  $social_content = '<style type="text/css">
+       div.social-links { height: 20px; margin: 10px auto 10px 0; text-align: left; clear: left; }
+    </style>
+    <div class="social-links">';
 
   if ( get_option( 'facebook-checkbox' ) ) {
     $social_content .= '<a href="http://www.facebook.com/sharer/sharer.php?u=' . get_permalink() . '&title=' . get_the_title() . '" target="_blank"><i class="fa fa-facebook-square fa-lg" style="padding-right: 3px;"></i></a>';
@@ -25,6 +28,9 @@ function asl_add_social_links( $content ){
   if ( get_option( 'lnkd-checkbox' ) ) {
     $social_content .= '<a href="http://www.linkedin.com/shareArticle?mini=true&url=' . get_permalink() . '&title=' . get_the_title() . '&source=' . get_site_url() . '" target="_blank"><i class="fa fa-linkedin-square fa-lg" style="padding-right: 3px;"></i></a>';
   }
+
+  $social_content .= '</div>';
+
 
   if (is_singular()) {
     $content .= $social_content;
