@@ -3,7 +3,7 @@
 Plugin Name: Akotek Social Links
 Plugin URI: https://akotek.no
 Description: Twitter, Linkedin and Facebook links
-Version: 0.02
+Version: 0.03
 Author URI: https://akotek.no
 */
 
